@@ -13,16 +13,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
-  props: {
-    imagem: String,
-    titulo: String,
-    descricao: String,
-    tags: Array
-  }
-};
+defineProps({
+  imagem: String,
+  titulo: String,
+  descricao: String,
+  tags: Array
+});
 
 </script>
 
