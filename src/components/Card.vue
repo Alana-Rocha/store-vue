@@ -5,7 +5,7 @@
         <img :src="products.image" alt="product.title" class="h-32 mx-auto" />
         <div class="font-bold text-xl mb-2 text-xs">{{ products.title }}</div>
         <div>
-          <p class="text-gray-700 text-base">{{ products.price }}</p>
+          <p class="text-gray-700 text-base">{{ formatarMoeda(products.price) }}</p>
         </div>
       </div>
     </div>
@@ -15,6 +15,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { getProducts } from "../services/api"
+import {formatarMoeda} from '../utils/formatarMoeda'
 
 const products = ref([]);
 
