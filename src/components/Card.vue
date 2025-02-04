@@ -1,25 +1,27 @@
 <template>
   <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-    <img class="w-full" :src="imagem" :alt="titulo" />
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">{{ titulo }}</div>
-      <p class="text-gray-700 text-base">{{ descricao }}</p>
-    </div>
-    <div class="px-6 pt-4 pb-2">
-      <span v-for="tag in tags" :key="tag"
-        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-        {{ tag }}</span>
+    <div v-for="products in products" :key="products.id">
+      <div class="px-6 py-4">
+        <img :src="products.image" alt="product.title" class="h-32 mx-auto" />
+        <div class="font-bold text-xl mb-2 text-xs">{{ products.title }}</div>
+        <div>
+          <p class="text-gray-700 text-base">{{ products.price }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+import { getProducts } from "../services/api"
 
-defineProps({
-  imagem: String,
-  titulo: String,
-  descricao: String,
-  tags: Array
+const products = ref([]);
+
+console.log({ products });
+
+onMounted(async () => {
+  products.value = await getProducts();
 });
 
 </script>

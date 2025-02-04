@@ -6,38 +6,33 @@ import Card from './components/Card.vue';
   <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
+        <p class="text-2xl font-bold text-[#42B883]">
+          ShopperVue
+        </p>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <div class="relative">
-          <button type="button" class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
-            aria-expanded="false">
-            Product
-            <svg class="size-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
-              data-slot="icon">
-              <path fill-rule="evenodd"
-                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-        </div>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+        <a href="#" class="text-base font-semibold text-gray-900">
+          Início
+        </a>
+        <a href="#" class="text-base font-semibold text-gray-900">Produtos</a>
+        <a href="#" class="text-base font-semibold text-gray-900">Contato</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
   </header>
 
-
-  <div>
-    <Card imagem="../public/images/blusa.jpg" titulo="Meu Card" descricao="Esta é uma descrição de exemplo para o card."
-      :tags="['fotografia', 'viagem', 'inverno']" />
+  <div class="flex flex-col gap-5 ">
+    <div class="flex gap-5 items-center justify-center">
+      <Card />
+      <Card />
+      <Card />
+    </div>
+    <div class="flex gap-5 items-center justify-center">
+      <Card />
+      <Card />
+      <Card />
+    </div>
   </div>
 </template>
 
