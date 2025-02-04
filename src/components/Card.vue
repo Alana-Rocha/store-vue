@@ -4,11 +4,14 @@
       <div class="flex justify-end">
         <InputAmount />
       </div>
-      <img :src="product.image" :alt="product.title" class="h-32 mx-auto" />
-      <div class="font-bold text-xl mb-2 text-xs">{{ product.title }}</div>
+
+      <div class="flex flex-col gap-4">
+        <img :src="product.image" :alt="product.title" class="h-32 mx-auto" />
+        <h1 class="font-bold text-xl mb-2 text-xs">{{ product.title }}</h1>
+      </div>
       <div class="flex justify-between items-center">
         <p class="text-gray-700 text-base">{{ formatarMoeda(product.price) }}</p>
-        <Button label="Add Cart" @click="" class="text-xs"/>
+        <Button label="Add Cart" @click="" class="text-xs" />
       </div>
     </div>
   </div>

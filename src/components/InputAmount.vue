@@ -2,7 +2,7 @@
   <div class="flex items-center space-x-2">
     <button
       @click="decreaseQuantity"
-      class="w-5 h-5 flex items-center justify-center bg-gray-700 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
+      class="w-5 h-5 flex items-center justify-center bg-gray-600 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
     >
       -
     </button>
@@ -10,7 +10,7 @@
     <input
       type="number"
       v-model="quantity"
-      class="w-9 h-7 text-center bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
+      class="w-9 h-7 text-center bg-[#3d9970] text-white border border-[#42B883] focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
       min="0"
       max="999"
       style="
@@ -22,7 +22,7 @@
 
     <button
       @click="increaseQuantity"
-      class="w-5 h-5 flex items-center justify-center bg-gray-700 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
+      class="w-5 h-5 flex items-center justify-center bg-gray-600 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
     >
       +
     </button>
