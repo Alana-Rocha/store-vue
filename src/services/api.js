@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://fakestoreapi.com/products?limit=1"
+    baseURL: "https://fakestoreapi.com/products?limit=9"
 })
 
 export const getProducts = async () => {
