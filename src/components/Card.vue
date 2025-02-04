@@ -1,10 +1,14 @@
 <template>
   <div class="max-w-sm rounded overflow-hidden shadow-lg card">
     <div class="px-6 py-4">
+      <div class="flex justify-end">
+        <InputAmount />
+      </div>
       <img :src="product.image" :alt="product.title" class="h-32 mx-auto" />
       <div class="font-bold text-xl mb-2 text-xs">{{ product.title }}</div>
-      <div>
+      <div class="flex justify-between items-center">
         <p class="text-gray-700 text-base">{{ formatarMoeda(product.price) }}</p>
+        <Button label="Add Cart" @click="" class="text-xs"/>
       </div>
     </div>
   </div>
@@ -13,6 +17,8 @@
 <script setup>
 import { defineProps } from "vue";
 import { formatarMoeda } from "../utils/formatarMoeda";
+import Button from "./Button.vue";
+import InputAmount from "./InputAmount.vue";
 
 defineProps({
   product: Object
