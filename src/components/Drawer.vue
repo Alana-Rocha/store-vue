@@ -17,6 +17,7 @@
           <p>{{ limitarCaracteres(product.title) }}</p>
           <p>{{ formatarMoeda(product.price) }}</p>
           <img :src="product.image" :alt="product.title" class="h-7 mx-auto" />
+          <InputAmount />
           <button @click="removeProductToCart" class="p-2 rounded-full hover:bg-gray-200 transition">
             <img src="/assets/icons/lixeira.svg" class="w-4 h-5" alt="Remover do carrinho" />
           </button>
@@ -30,6 +31,7 @@
 import { useCartStore } from '../stores/CartStore';
 import { limitarCaracteres } from '../utils/limitarCaracteres';
 import { formatarMoeda } from '../utils/formatarMoeda'
+import InputAmount from "./InputAmount.vue";
 
 const props = defineProps({
   product: Object,

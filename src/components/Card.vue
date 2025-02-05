@@ -2,7 +2,6 @@
   <div class="max-w-sm rounded overflow-hidden shadow-lg card">
     <div class="px-6 py-4">
       <div class="flex justify-end">
-        <InputAmount />
       </div>
       <div class="flex flex-col gap-4">
         <img :src="product.image" :alt="product.title" class="h-32 mx-auto" />

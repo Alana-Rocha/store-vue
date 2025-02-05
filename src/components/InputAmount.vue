@@ -6,7 +6,7 @@
     </button>
 
     <input type="number" v-model="quantity"
-      class="w-9 h-7 text-center bg-[#3d9970] text-white border border-[#42B883] focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
+      class="w-8 h-6 text-center bg-[#3d9970] text-white border border-[#42B883] focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full text-xs"
       min="0" max="999" style="
         appearance: none;
         -moz-appearance: textfield;
