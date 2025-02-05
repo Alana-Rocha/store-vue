@@ -5,7 +5,7 @@ import { useCartStore } from "./stores/CartStore";
 import Card from "./components/Card.vue";
 
 const products = ref([]);
-const cartStore = useCartStore(); 
+const cartStore = useCartStore();
 
 onMounted(async () => {
   products.value = await getProducts();
@@ -21,12 +21,10 @@ onMounted(async () => {
             ShopperVue
           </p>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end relative">
+        <div class="relative"> 
           <img src="/assets/icons/cart.svg" class="w-12 h-13" alt="Carrinho" />
-          <span
-            v-if="cartStore.cart.length > 0"
-            class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-          >
+          <span v-if="cartStore.cart.length > 0"
+            class="absolute -top-0 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
             {{ cartStore.cart.length }}
           </span>
         </div>
