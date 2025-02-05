@@ -3,10 +3,10 @@ import { ref } from "vue";
 
 export const useCartStore = defineStore("cart", () => {
   const cart = ref([]);
+  const openDrawer = ref(false);
 
   const addToCart = (product) => {
     const inCart = cart.value.some((i) => i.id === product.id);
-
     if (!inCart) {
       cart.value.push(product);
     }
@@ -21,7 +21,6 @@ export const useCartStore = defineStore("cart", () => {
     cart,
     addToCart,
     removeFromCart,
-    isDrawerOpen,
-    toggleDrawer,
+    openDrawer,
   };
 });

@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { getProducts } from "./services/api";
 import { useCartStore } from "./stores/CartStore";
 import Card from "./components/Card.vue";
+import Drawer from "./components/Drawer.vue";
 
 const products = ref([]);
 const cartStore = useCartStore();
@@ -10,6 +11,7 @@ const cartStore = useCartStore();
 onMounted(async () => {
   products.value = await getProducts();
 });
+
 </script>
 
 <template>
@@ -21,13 +23,15 @@ onMounted(async () => {
             ShopperVue
           </p>
         </div>
-        <div class="relative"> 
+
+        <div class="relative" @click="cartStore.openDrawer = true">
           <img src="/assets/icons/cart.svg" class="w-12 h-13" alt="Carrinho" />
           <span v-if="cartStore.cart.length > 0"
             class="absolute -top-0 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
             {{ cartStore.cart.length }}
           </span>
         </div>
+        <Drawer />
       </nav>
     </header>
 
