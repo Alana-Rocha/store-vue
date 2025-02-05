@@ -3,14 +3,25 @@ import { ref } from "vue";
 
 export const useCartStore = defineStore("cart", () => {
   const cart = ref([]);
+
   const addToCart = (product) => {
-    const item = cart.value.find((i) => i.id === product.id);
-    if (item) {
-        console.log({item})
-      item.quantity += 1;
-    } else {
-      cart.value.push({ ...product, quantity: 1 });
+    const inCart = cart.value.some((i) => i.id === product.id);
+
+    if (!inCart) {
+      cart.value.push(product);
     }
   };
-  return { cart, addToCart };
+
+  const removeFromCart = (product) => {
+    const index = cart.value.findIndex((i) => i.id === product.id);
+    cart.value.splice(index, 1);
+  };
+
+  return {
+    cart,
+    addToCart,
+    removeFromCart,
+    isDrawerOpen,
+    toggleDrawer,
+  };
 });
