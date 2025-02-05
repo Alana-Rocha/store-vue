@@ -1,9 +1,11 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { getProducts } from "./services/api";
+import { useCartStore } from "./stores/CartStore";
 import Card from "./components/Card.vue";
 
 const products = ref([]);
+const cartStore = useCartStore(); 
 
 onMounted(async () => {
   products.value = await getProducts();
@@ -11,7 +13,6 @@ onMounted(async () => {
 </script>
 
 <template>
-
   <div>
     <header>
       <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -20,10 +21,14 @@ onMounted(async () => {
             ShopperVue
           </p>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <!-- <IconButton size="lg"> -->
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end relative">
           <img src="/assets/icons/cart.svg" class="w-12 h-13" alt="Carrinho" />
-          <!-- </IconButton> -->
+          <span
+            v-if="cartStore.cart.length > 0"
+            class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+          >
+            {{ cartStore.cart.length }}
+          </span>
         </div>
       </nav>
     </header>
@@ -33,20 +38,3 @@ onMounted(async () => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

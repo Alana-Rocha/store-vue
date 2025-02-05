@@ -25,30 +25,22 @@
 import { useQuantityProductStore } from '../stores/QuantityProductStore.js';
 
 export default {
-  setup() {
-    const quantityProductStore = useQuantityProductStore();
+  data() {
     return {
-      quantity: quantityProductStore.quantity,
-      increaseQuantity: quantityProductStore.increaseQuantity,
-      decreaseQuantity: quantityProductStore.decreaseQuantity,
-    }
-  }
-  // data() {
-  //   return {
-  //     quantity: 0,
-  //   };
-  // },
-  // methods: {
-  //   increaseQuantity() {
-  //     if (this.quantity < 999) {
-  //       this.quantity++;
-  //     }
-  //   },
-  //   decreaseQuantity() {
-  //     if (this.quantity > 0) {
-  //       this.quantity--;
-  //     }
-  //   },
-  // },
+      quantity: 0,
+    };
+  },
+  methods: {
+    increaseQuantity() {
+      if (this.quantity < 999) {
+        this.quantity++;
+      }
+    },
+    decreaseQuantity() {
+      if (this.quantity > 0) {
+        this.quantity--;
+      }
+    },
+  },
 };
 </script>
